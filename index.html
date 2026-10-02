@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#11151b">
+    <title>Hiring Genius – Current job offers</title>
+    <meta name="description" content="Browse current on-site and online job offers and apply through WhatsApp.">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header class="top">
+        <div class="wrap bar">
+            <a class="logo" href="./">Hiring Genius</a>
+            <nav id="nav" aria-label="Main"><a href="#offers">Offers</a><button class="btn ghost sm"
+                    id="goSearch">Search</button><button class="btn ghost sm" id="openF">Filters</button></nav>
+            <button class="btn ghost sm menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="wrap">
+            <h1>Find the right job opportunity</h1>
+            <p>Browse the on-site and online offers that are open right now and find one that matches your skills,
+                language, location and requirements.</p>
+            <label for="q" class="vh">Search offers</label>
+            <div class="srow"><input id="q" type="search" placeholder="Search company, position, location…"
+                    autocomplete="off" enterkeyhint="search"><button class="btn ghost" id="mF"
+                    type="button">Filters</button></div>
+        </div>
+    </section>
+    <main class="wrap layout" id="offers">
+        <div class="backdrop" id="bd"></div>
+        <aside class="filters" id="filters" aria-label="Filters">
+            <h2>Filters</h2>
+            <label for="f-mode">Work type</label><select id="f-mode"></select>
+            <label for="f-location">Location</label><select id="f-location"></select>
+            <label for="f-english">Language</label><select id="f-english"></select>
+            <label for="f-company">Company</label><select id="f-company"></select>
+            <label for="f-position">Position</label><select id="f-position"></select>
+            <label for="f-transport">Transportation</label><select id="f-transport">
+                <option value="">Any</option>
+                <option value="yes">Available</option>
+                <option value="no">Not available</option>
+                <option value="unknown">Unknown</option>
+            </select>
+            <label for="f-education">Education</label><select id="f-education"></select>
+            <label for="f-salary">Minimum salary (EGP)</label><input id="f-salary" type="number" min="0" step="500"
+                inputmode="numeric">
+            <label for="f-age">Your age</label><input id="f-age" type="number" min="14" max="80" inputmode="numeric">
+            <p style="display:flex;gap:8px;margin-top:16px"><button class="btn ghost" id="clear"
+                    style="flex:1">Clear</button><button class="btn close-f" id="closeF" style="flex:1">Show
+                    results</button></p>
+        </aside>
+        <section>
+            <div class="res" id="count" aria-live="polite"></div>
+            <div class="grid" id="grid"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap">Hiring Genius</div>
+    </footer>
+    <dialog id="dlg" aria-labelledby="dt">
+        <div class="dh">
+            <div>
+                <div id="dc" style="color:var(--mu);font-weight:600"></div>
+                <h2 id="dt"></h2>
+            </div><button class="btn ghost sm" id="dx" aria-label="Close offer">Close</button>
+        </div>
+        <div class="db" id="dbody"></div>
+    </dialog>
+    <div id="toast" role="status"></div>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
